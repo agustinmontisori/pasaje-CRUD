@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <form action="/signin/" method="POST" class="card card-body shadow-lg p-4 rounded">
+                <div class="text-center mb-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png" alt="" width="150"> 
+                </div>
+                <h1 class="text-center mb-4">Iniciar sesión</h1>
+                {{ error }}
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label for="username" class="form-label fw-bold">Usuario</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Escribe tu usuario" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label fw-bold">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Escribe tu contraseña" required>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Iniciar sesión</button>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="{% url 'home' %}" class="btn btn-link">Volver</a>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</main>
+
+{% endblock %}

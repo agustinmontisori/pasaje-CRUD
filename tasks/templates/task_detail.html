@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+
+            {{ error }}
+
+            <form action="/tasks/create/" method="POST" class="card card-body">
+                <h1 class="text-center display-3 py-3">Actualizar tarea</h1>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-primary">
+                    Actualizar
+                </button>
+            </form>
+            <div class="d-flex justify-content-evenly mt-1">
+                <form action="{% url 'complete_task' task.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-primary">Completar</button>
+                </form>
+                <form action="{% url 'delete_task' task.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-danger">Borrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

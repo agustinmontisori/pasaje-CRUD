@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<main class="container p-5">
+    <section class="card card-body shadow-lg rounded mx-auto" style="max-width: 600px;">
+        <div class="text-center mb-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png" alt="Logo de la aplicación" width="150">
+        </div> 
+        <h1 class="display-4 text-center mb-4">Tareas App</h1>
+       <p class="text-center d-none d-md-block">
+    Bienvenido a nuestro gestor de tareas. Esta aplicación CRUD te permite crear, leer, actualizar y eliminar tus tareas
+    de forma eficiente. Organiza tu trabajo con facilidad: añade nuevas tareas, marca las importantes, y lleva un control
+    de las completadas. Con una interfaz intuitiva y accesible, puedes acceder a los detalles de cada tarea y realizar
+    cambios cuando lo necesites. Nuestro sistema te ayuda a mantenerte al día con tus pendientes, asegurando que no
+    olvides nada importante. Explora las funcionalidades y optimiza tu productividad hoy mismo con nuestro gestor de
+    tareas.
+</p>
+<p class="text-center d-md-none">
+    Bienvenido a nuestro gestor de tareas. Esta aplicación CRUD te permite crear, leer, actualizar y eliminar tus tareas
+    de forma eficiente.
+</p>
+        <div class="d-flex justify-content-center mt-4">
+            <a class="btn btn-outline-primary m-1" href="{% url 'signin' %}">Iniciar sesión</a>
+            <a class="btn btn-outline-success m-1" href="{% url 'signup' %}">Registrarse</a>
+        </div>
+    </section>
+</main>
+{% endblock %}
